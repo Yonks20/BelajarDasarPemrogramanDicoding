@@ -1,0 +1,179 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f1eb;
+}
+
+header.navbar-container {
+  width: 100%;
+  max-width: 1200px;
+  padding-block: 1rem;
+  margin-inline: auto;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+header.navbar-container .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header.navbar-container .logo img {
+  width: 180px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+header.navbar-container .logo .logotext {
+  margin: 0;
+  color: black;
+  font-weight: 500;
+}
+
+header.navbar-container .nav-list ul {
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem 1rem;
+}
+
+header.navbar-container .nav-list li {
+  list-style-type: none;
+}
+
+header.navbar-container .nav-list li a {
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: black;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+header.navbar-container .nav-list li:hover a {
+  background-color: #2b77a4;
+  color: #ff8c42;
+}
+
+#beranda-button {
+  background-color: #2b77a4;
+  color: #ff8c42;
+  text-decoration: none;
+}
+
+main {
+  padding: 100px;
+  display: flex;
+  gap: 1.5rem;
+  /* ini yang buat footernya turun jadi kebawah */
+}
+
+#content {
+  flex: 5;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem 2rem;
+}
+
+aside {
+  flex: 1;
+}
+
+/* buat header dari display online */
+header {
+  display: inline;
+}
+
+.featured-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+  /* object fit dan position itu tujuannya buat   */
+}
+
+.profile img {
+  width: 200px;
+  border-radius: 10%;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  -ms-border-radius: 10%;
+  -o-border-radius: 10%;
+}
+
+/* Pakai card style agar lebih rapih*/
+
+.card {
+  /* Perbaiki card padding dan margin top */
+
+  box-shadow: 0 4px 8px 0px #00a2c6;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Perangkat dengan lebar layar 1200px dan dibawahnya nanti akan berukuran */
+@media screen and (max-width: 1200px) {
+  main {
+    flex-flow: column nowrap;
+  }
+  main aside {
+    align-self: center;
+  }
+}
+
+/* Perangkat dengan lebar layar 768 dan dibawahnya  */
+
+@media screen and (max-width: 768px) {
+  .nav-list ul {
+    justify-content: center;
+  }
+  main aside {
+    align-self: stretch;
+  }
+  header.navbar-container {
+    flex-direction: column;
+  }
+
+  header.navbar-container .nav-list ul {
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+  }
+
+  main {
+    padding: 1rem 3rem;
+  }
+}
+
+footer {
+  padding: 20px;
+  color: white;
+  background-color: #00a2c6;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Karena class jadi pakai titik */
+.profile header {
+  text-align: center;
+}
+
+/* Pakai selector .featured images */
